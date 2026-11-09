@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "manufacturer": "PLACEHOLDER",
+    "model": "SP400",
+    "serial": "SIM0001",
+    "firmware": "0.1.0-sim"
+  },
+  "line_terminator": "\n",
+  "parameters": {
+    "GAIN":     {"type": "float", "default": 1.0,   "min": 0.1, "max": 100.0, "unit": ""},
+    "RATE":     {"type": "float", "default": 10.0,  "min": 0.1, "max": 1000.0, "unit": "Hz"},
+    "CHANNEL":  {"type": "int",   "default": 1,     "min": 1,   "max": 4,     "unit": ""},
+    "SETPOINT": {"type": "float", "default": 25.0,  "min": -50.0, "max": 150.0, "unit": "C"}
+  },
+  "sensors": {
+    "SIGNAL":      {"base": 1.0,  "noise": 0.01, "scale_by": "GAIN", "unit": "V"},
+    "TEMPERATURE": {"base": 25.0, "noise": 0.05, "track": "SETPOINT", "tau_s": 30.0, "unit": "C"}
+  }
+}
